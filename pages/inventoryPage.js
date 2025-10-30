@@ -1,5 +1,6 @@
 // pages/InventoryPage.js
-const BasePage = require('./basePage');
+import BasePage from './basePage.js';
+import { until } from 'selenium-webdriver';   
 
 class InventoryPage extends BasePage {
   constructor(driver) {
@@ -35,4 +36,4 @@ class InventoryPage extends BasePage {
   }
 }
 
-module.exports = InventoryPage;
+export default InventoryPage;

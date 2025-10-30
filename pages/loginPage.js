@@ -1,5 +1,5 @@
 // pages/LoginPage.js
-const BasePage = require('./basePage');
+import BasePage from './basePage.js';
 
 class LoginPage extends BasePage {
   constructor(driver) {
@@ -28,4 +28,4 @@ class LoginPage extends BasePage {
   }
 }
 
-module.exports = LoginPage;
+export default LoginPage;

@@ -1,5 +1,5 @@
 // pages/BasePage.js
-const { By, until } = require('selenium-webdriver');
+import { By, until } from 'selenium-webdriver';
 
 class BasePage {
   constructor(driver) {
@@ -51,4 +51,4 @@ class BasePage {
   }
 }
 
-module.exports = BasePage;
+export default BasePage;

@@ -1,6 +1,6 @@
 // utils/driver.js
-const { Builder } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+import { Builder } from 'selenium-webdriver';
+import chrome from 'selenium-webdriver/chrome.js';  
 
 async function buildDriver() {
   const options = new chrome.Options();
@@ -14,4 +14,4 @@ async function buildDriver() {
   return new Builder().forBrowser('chrome').setChromeOptions(options).build();
 }
 
-module.exports = buildDriver;
+export { buildDriver };
