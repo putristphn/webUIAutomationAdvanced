@@ -166,6 +166,23 @@ assert.ok(diffPixels < 100, `Visual difference too high: ${diffPixels} pixels`);
 
 ---
 
+## 🪄 How to Generate New Baseline Screenshots
+
+If baseline images don’t exist — for example, when running the test for the first time or after a UI update:
+
+Run the visual test normally:
+```bash
+npx mocha tests/sesi11_putristphn/login.pom.test.js
+```
+
+The script will automatically detect the missing baseline and create it (e.g. login-baseline.png).
+
+Re-run the test — it will now compare the new baseline with the current layout.
+
+💡 Tip: If the UI changes intentionally, delete the old baseline file and rerun the test to create a new one.
+
+---
+
 ## 🧠 Key Learning Points
 
 - Creating easy-to-maintain automated tests using Page Object Model (POM)
