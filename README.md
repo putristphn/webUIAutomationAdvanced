@@ -1,18 +1,18 @@
 # 🧩 SauceDemo UI Automation Testing — Page Object Model (POM)
 
-An advanced version of the [**webUIAutomation**](https://github.com/putristphn/webUIAutomation) project, refactored using the **Page Object Model (POM)** design pattern to enhance test scalability, readability, and maintainability.  
+An advanced version of the [**webUIAutomation**](https://github.com/putristphn/webUIAutomation) project, refactored using the **Page Object Model (POM)** design pattern with visual regression testing.
 Developed as part of the **Digital Skola QA Bootcamp Batch 12 - Session 11 (Web UI Automation Advanced)** by **Putri Stephanie Lesilolo**.
 
 ---
 
 ## 📋 Project Overview
 
-This project automates UI test scenarios for the [**SauceDemo Website**](https://www.saucedemo.com) using:
-- ✅ Login flow validation  
-- ✅ Product sorting by name and price  
-- ✅ Assertions for deterministic sorting results  
-- ✅ Page Object Model architecture for reusable and maintainable test structure  
-- ✅ Chrome headless execution for CI or remote testing environments  
+This project demonstrates scalable, maintainable, and visual UI automation that includes:
+- ✅ Login validation using reusable Page Object classes
+- ✅ Product sorting verification (Name A→Z, Z→A, Price low→high, Price high→low)
+- ✅ Screenshot-based visual testing to detect UI layout changes
+- ✅ Deterministic assertions with dynamic elements
+- ✅ Modular structure separating pages, tests, and utilities
 
 ---
 
@@ -68,6 +68,7 @@ webUIAutomationAdvanced/
 | **Mochawesome** | Report generator |
 | **Node.js + npm** | Environment and dependency manager |
 | **ChromeDriver** | Execution engine for UI tests |
+| **Pixelmatch + PNG.js** | Visual diff comparison |
 
 ---
 
@@ -129,6 +130,40 @@ everything handled by the LoginPage object.
 
 ---
 
+## 🖼️ Session 11 — Visual Testing Implementation
+
+This session introduces visual assertions into the test suite.
+Each test captures a baseline screenshot on the first run and compares subsequent runs to detect layout changes.
+
+If any pixel difference exceeds the threshold, the test fails — helping ensure UI consistency across updates.
+
+Example visual test:
+```javascript
+const baselinePath = 'login-baseline.png';
+if (!fs.existsSync(baselinePath)) {
+  await takeScreenshot(baselinePath);
+  console.log('Baseline screenshot created');
+  return;
+}
+
+const currentPath = 'login-current.png';
+await takeScreenshot(currentPath);
+
+const diffPath = 'login-diff.png';
+const diffPixels = compareScreenshots(baselinePath, currentPath, diffPath);
+assert.ok(diffPixels < 100, `Visual difference too high: ${diffPixels} pixels`);
+```
+---
+
+## 📸 Example Visual Outputs
+| Screenshot Type | Description                                  |
+| --------------- | -------------------------------------------- |
+| **Baseline**    | The first captured reference image           |
+| **Current**     | New screenshot taken during test run         |
+| **Diff**        | Highlighted image showing visual differences |
+
+---
+
 ## 🧠 Key Learning Points
 
 - Creating easy-to-maintain automated tests using Page Object Model (POM)
@@ -136,6 +171,7 @@ everything handled by the LoginPage object.
 - Reusing helper methods for login and sorting actions
 - Producing clear and visual test reports with Mochawesome
 - Writing reliable assertions for dynamic page elements
+- Implementing visual regression testing with Pixelmatch and PNG.js
 
 ---
 
