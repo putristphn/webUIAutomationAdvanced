@@ -97,6 +97,8 @@ After test execution, open the generated HTML report:
 open mochawesome-report/mochawesome.html
 ```
 
+---
+
 ## 🧩 Example — Login Functionality (POM)
 ```javascript
  it('User login successfully with valid credentials', async () => {
