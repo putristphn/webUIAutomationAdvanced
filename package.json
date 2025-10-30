@@ -1,0 +1,19 @@
+{
+  "name": "webUIAutomationAdvance",
+  "version": "1.0.0",
+  "description": "Advanced Selenium WebDriver Automation Framework using Page Object Model (POM) for SauceDemo Website",
+  "scripts": {
+    "login:pom": "mocha tests/sesi11_putristphn/login.pom.test.js --reporter mochawesome --recursive",
+    "sorting:pom": "mocha tests/sesi11_putristphn/sorting.pom.test.js --reporter mochawesome --recursive"
+  },
+  "dependencies": {
+    "chromedriver": "^141.0.0",
+    "selenium-webdriver": "^4.17.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "mochawesome": "^7.1.4"
+  },
+  "author": "Putri Stephanie Lesilolo",
+  "license": "ISC"
+}
