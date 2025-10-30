@@ -35,20 +35,24 @@ This project automates UI test scenarios for the [**SauceDemo Website**](https:/
 ```
 webUIAutomationAdvanced/
 ├── pages/
-│ ├── basePage.js          # Common reusable actions (open, click, type, etc.)
-│ ├── loginPage.js.       # Login page locators and methods
-│ └── inventoryPage.js.         # Inventory page (sorting logic, assertions)
+│ ├── basePage.js                 # Common reusable actions (open, click, type, etc.)
+│ ├── loginPage.js.               # Login page locators and methods
+│ └── inventoryPage.js.           # Inventory page (sorting logic, assertions)
 │
 ├── tests/
 │ ├── sesi11_putristphn/
-│ │ ├── login.pom.test.js.      # Login test cases using POM
-│ │ └── sorting.pom.test.js     # Sorting test cases using POM
+│     ├── login.pom.test.js.      # Login test cases using POM
+│     └── sorting.pom.test.js     # Sorting test cases using POM
 │
 ├── utils/
-│ └── driver.js                 # Driver setup and configuration
+│ └── driver.js                   # Driver setup and configuration
 │
-├── mochawesome-report/        # Auto-generated HTML reports
-├── package.json               # Project metadata and test scripts
+├── mochawesome-report/           # Auto-generated HTML reports
+│ ├── assets/
+│     └── report_login.png
+│     └── report_sorting.png
+│
+├── package.json                  # Project metadata and test scripts
 └── README.md
 ```
 
